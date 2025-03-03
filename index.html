@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кот в галстуке</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="cat.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Кот в галстуке</h1>
+    </header>
+
+    <section id="video">
+        <div class="video-container">
+            <video autoplay loop controls width="100%">
+                <source src="cat_video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Мы рейдим долбоебские группы чикен сранеров, фанатов срунки и прочей детской параши. У нас уже <span id="members-count">15+</span> участников. </p>
+    </section>
+
+    <section id="join">
+        <h2>Вступить</h2>
+        <form id="join-form">
+            <label for="username">Юзернейм в тг:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="reason">Почему ты хочешь вступить:</label>
+            <input type="text" id="reason" name="reason" required>
+
+            <button type="submit">Подать заявку</button>
+        </form>
+    </section>
+<br>
+<br>
+<br>
+<br>
+    <footer>
+        <p>&copy; 2025 Кот в галстуке</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
