@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Мобильное меню
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+    
+    menuToggle.addEventListener('click', function() {
+        navUl.classList.toggle('show');
+    });
+    
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Закрываем меню на мобильных устройствах
+                if (navUl.classList.contains('show')) {
+                    navUl.classList.remove('show');
+                }
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
 document.getElementById('join-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -39,3 +71,4 @@ document.getElementById('join-form').addEventListener('submit', function(event) 
         alert('❌ Заполни все поля формы.');
     }
 });
+})
